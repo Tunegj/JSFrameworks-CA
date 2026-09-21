@@ -37,4 +37,8 @@ interface ProductsResponse {
   meta: Meta;
 }
 
-export type { Product, ProductsResponse };
+interface ProductByIdResponse {
+  data: Product;
+}
+
+export type { Product, ProductsResponse, ProductByIdResponse };
