@@ -41,4 +41,4 @@ interface ProductByIdResponse {
   data: Product;
 }
 
-export type { Product, ProductsResponse, ProductByIdResponse };
+export type { Product, ProductsResponse, ProductByIdResponse, ProductReview };

@@ -18,7 +18,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <img
           src={product.image.url}
           alt={product.image.alt}
-          className="h-64 w-full object-cover"
+          className="aspect-square w-full object-cover"
         />
         {hasDiscount && (
           <span className="absolute right-3 top-3 rounded-full bg-red-100 px-2 py-1 text-sm font-medium text-red-700">
