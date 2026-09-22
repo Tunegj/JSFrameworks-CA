@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../hooks/useCart";
 
 export function Header() {
+  const { cartItems } = useCart();
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <header className="border-b border-gray-200 bg-white">
       <nav
@@ -38,7 +42,7 @@ export function Header() {
         >
           Cart
           <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-green-700 px-1.5 text-xs font-semibold text-white">
-            0
+            {cartCount}
           </span>
         </button>
       </nav>

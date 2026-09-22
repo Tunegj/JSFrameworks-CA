@@ -5,9 +5,11 @@ import { fetchProductById } from "../api/products";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { formatPrice } from "../utils/formatPrice";
 import { ReviewCard } from "../components/ReviewCard";
+import { useCart } from "../hooks/useCart";
 
 export function ProductDetailsPage() {
   const { productId } = useParams();
+  const { addToCart } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -84,6 +86,7 @@ export function ProductDetailsPage() {
 
               <button
                 type="button"
+                onClick={() => addToCart(product)}
                 className="mt-2 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 sm:w-auto"
               >
                 Add to Cart
