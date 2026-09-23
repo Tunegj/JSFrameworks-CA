@@ -21,6 +21,11 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
       <dialog
         ref={ref}
         aria-labelledby="cart-dialog-heading"
+        onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            onClose();
+          }
+        }}
         className="m-auto w-full max-w-md rounded-xl p-0 backdrop:bg-black/40"
       >
         <div className="relative p-6">
