@@ -11,6 +11,8 @@ export interface CartContextType {
   decreaseQuantity: (productId: string) => void;
   clearCart: () => void;
   cartTotal: number;
+  toastMessage: string | null;
+  clearToast: () => void;
 }
 
 export interface CartProviderProps {

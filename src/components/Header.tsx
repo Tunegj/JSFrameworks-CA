@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 import { useRef } from "react";
 import { CartDialog } from "./CartDialog";
+import { Toast } from "./Toast";
 
 export function Header() {
   const { cartItems } = useCart();
@@ -56,6 +57,7 @@ export function Header() {
       </nav>
 
       <CartDialog ref={dialogRef} onClose={closeCart} />
+      <Toast />
     </header>
   );
 }

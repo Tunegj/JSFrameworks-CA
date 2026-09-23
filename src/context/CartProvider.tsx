@@ -16,6 +16,7 @@ function getInitialCart(): CartItem[] {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>(getInitialCart);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const cartTotal = cartItems.reduce((total, item) => {
     return total + item.product.discountedPrice * item.quantity;
@@ -45,10 +46,18 @@ export function CartProvider({ children }: CartProviderProps) {
     } else {
       setCartItems([...cartItems, { product, quantity: 1 }]);
     }
+    setToastMessage(`${product.title} added to cart`);
   }
 
   function removeFromCart(productId: string) {
+    const itemToRemove = cartItems.find(
+      (item) => item.product.id === productId,
+    );
     setCartItems(cartItems.filter((item) => item.product.id !== productId));
+
+    if (itemToRemove) {
+      setToastMessage(`${itemToRemove.product.title} removed from the cart`);
+    }
   }
 
   function increaseQuantity(productId: string) {
@@ -85,6 +94,10 @@ export function CartProvider({ children }: CartProviderProps) {
     setCartItems([]);
   }
 
+  function clearToast() {
+    setToastMessage(null);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -95,6 +108,8 @@ export function CartProvider({ children }: CartProviderProps) {
         decreaseQuantity,
         clearCart,
         cartTotal,
+        toastMessage,
+        clearToast,
       }}
     >
       {children}
