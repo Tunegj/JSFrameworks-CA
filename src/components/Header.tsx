@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
+import { useRef } from "react";
+import { CartDialog } from "./CartDialog";
 
 export function Header() {
   const { cartItems } = useCart();
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  function closeCart() {
+    dialogRef.current?.close();
+  }
 
   return (
     <header className="border-b border-gray-200 bg-white">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify between px-4 py-4"
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4"
         aria-label="Main navigation"
       >
         <div className="flex items-center gap-8">
@@ -38,6 +45,7 @@ export function Header() {
 
         <button
           type="button"
+          onClick={() => dialogRef.current?.showModal()}
           className="flex items-center gap-2 rounded-lg px-3 py-2 font-medium text-gray-700 transition hover:bg-gray-100"
         >
           Cart
@@ -46,6 +54,8 @@ export function Header() {
           </span>
         </button>
       </nav>
+
+      <CartDialog ref={dialogRef} onClose={closeCart} />
     </header>
   );
 }

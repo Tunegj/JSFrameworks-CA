@@ -16,7 +16,7 @@ export function CartPage() {
       <h1 className="mb-8 text-3xl font-bold">Your Cart</h1>
 
       {cartItems.length === 0 && (
-        <p className="text=gray-600">Your cart is empty.</p>
+        <p className="text-gray-600">Your cart is empty.</p>
       )}
 
       {cartItems.length > 0 && (
@@ -84,6 +84,13 @@ export function CartPage() {
               <span>Total</span>
               <span>{formatPrice(cartTotal)}</span>
             </div>
+
+            <Link
+              to="/checkout"
+              className="mt-6 block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:w-fit"
+            >
+              Proceed to Checkout
+            </Link>
           </div>
         </>
       )}
