@@ -45,9 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {product.reviews.length > 0 && (
-            <p className="mt-2 text-sm text-gray-600">
-              Rating: {product.rating} / 5
-            </p>
+            <p className="mt-2 text-sm text-gray-600">★ {product.rating} / 5</p>
           )}
         </div>
       </Link>
