@@ -12,8 +12,10 @@ export function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
+
   const matchingProducts = products.filter((product) => {
-    return product.title.toLowerCase().includes(searchQuery.toLowerCase());
+    return product.title.toLowerCase().includes(normalizedSearchQuery);
   });
 
   const searchRef = useRef<HTMLDivElement>(null);
@@ -42,7 +44,7 @@ export function HomePage() {
         const fetchedProducts = await fetchProducts();
         setProducts(fetchedProducts);
       } catch {
-        setError("Failed to load products. Please try again");
+        setError("Failed to load products. Please try again.");
       } finally {
         setIsLoading(false);
       }
@@ -97,7 +99,7 @@ export function HomePage() {
           </div>
         )}
       </div>
-      {isLoading && <LoadingSpinner />}
+      {isLoading && <LoadingSpinner text="Loading products..." />}
       {error && <p>{error}</p>}
       {products.length === 0 && !isLoading && !error && (
         <p>No products available</p>

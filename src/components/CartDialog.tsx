@@ -78,7 +78,7 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                             type="button"
                             onClick={() => decreaseQuantity(item.product.id)}
                             className="rounded border border-gray-300 px-2 py-1 cursor-pointer"
-                            aria-label={`Decrease quantity of ${item.product.id}`}
+                            aria-label={`Decrease quantity of ${item.product.title}`}
                           >
                             -
                           </button>
@@ -88,7 +88,7 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                             type="button"
                             onClick={() => increaseQuantity(item.product.id)}
                             className="rounded border border-gray-300 px-2 py-1 cursor-pointer"
-                            aria-label={`Increase quantity of ${item.product.id}`}
+                            aria-label={`Increase quantity of ${item.product.title}`}
                           >
                             +
                           </button>

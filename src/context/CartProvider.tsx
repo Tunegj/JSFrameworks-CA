@@ -11,7 +11,11 @@ function getInitialCart(): CartItem[] {
     return [];
   }
 
-  return JSON.parse(savedCart);
+  try {
+    return JSON.parse(savedCart);
+  } catch {
+    return [];
+  }
 }
 
 export function CartProvider({ children }: CartProviderProps) {

@@ -30,7 +30,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
               </span>
             </span>
 
-            <span className="text-sm text-gray-600">{review.rating} /5</span>
+            <span className="text-sm text-gray-600">{review.rating} / 5</span>
           </div>
         </div>
       </div>

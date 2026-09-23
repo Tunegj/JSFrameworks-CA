@@ -47,7 +47,6 @@ export function CheckoutPage() {
                 </div>
 
                 <p className="font-medium">
-                  {" "}
                   {formatPrice(item.product.discountedPrice * item.quantity)}
                 </p>
               </article>

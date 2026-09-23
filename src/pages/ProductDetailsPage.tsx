@@ -38,7 +38,7 @@ export function ProductDetailsPage() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
-      {isLoading && <LoadingSpinner />}
+      {isLoading && <LoadingSpinner text="Loading product details..." />}
       {error && <p>{error}</p>}
       {!isLoading && !error && product && (
         <>
@@ -129,7 +129,9 @@ export function ProductDetailsPage() {
               <div className="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-6">
                 <h3 className="text-lg font-semibold">No reviews yet</h3>
 
-                <p className="mt-1 text-gray-600">No reviews yet.</p>
+                <p className="mt-1 text-gray-600">
+                  This product has not received any reviews yet.
+                </p>
               </div>
             )}
           </section>
