@@ -44,7 +44,7 @@ export function CartPage() {
                   </h2>
 
                   <p className="mt-1 font-medium">
-                    {formatPrice(item.product.discountedPrice)}
+                    {formatPrice(item.product.discountedPrice)} each
                   </p>
                   <div className="mt-4 flex flex-wrap items-center gap-3">
                     <button
@@ -74,6 +74,10 @@ export function CartPage() {
                       Remove
                     </button>
                   </div>
+                  <p className="font-semibold text-gray-900 mt-4">
+                    Subtotal:{" "}
+                    {formatPrice(item.product.discountedPrice * item.quantity)}
+                  </p>
                 </div>
               </article>
             ))}
