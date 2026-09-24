@@ -55,29 +55,28 @@ Testing performed on the deployed Netlify application
 
 ### Issue: Direct URL refresh returned 404 on Netlify
 
-- **Found:**
-- **Cause:**
-- **Fix:**
-- **Retest:**
-- **Status:**
+- **Found:** Navigating to an invalid route displayed a blank page because no React Router route matched the URL
+- **Fix:** Added a catch-all `*` route with a Not Found page and a link back to the shop
+- **Retest:** Pending
+- **Status:** In progress
 
 ### Improvement: Cart item subtotal
 
 - **Found:** Cart items are displayed the unit price and overall cart total, but not the subtotal for each line item when quantity was greater than one.
 - **Improvement:** Added a subtotal calculated from unit price x quantity for each cart item.
-- **Retest:** Tested different quantities locally. Item subtotals and overall cart total updated correctly.
-- **Status:** Fixed locally - production retest pending.
+- **Retest:** Tested on the deployed Netlify site and working as expected
+- **Status:** Fixed
 
 ### Improvement: Continue Shopping from cart
 
 - **Found:** The Cart page did not provide a direct way to return to shopping, particularly when the cart became empty.
 - **Improvement:** Added a "Continue Shopping" link on the Cart page, including when the cart is empty.
-- **Retest:** Pending.
-- **Status:** In progress
+- **Retest:** Tested on the deployed Netlify site and working as expected.
+- **Status:** Fixed
 
 ### Improvement: Contact form blur validation
 
 - **Found:** The contact form did not validate fields until submission.
 - **Improvement:** Added `onBlur` validation so individual fields are validated when the user leaves them, while retaining full validation on submit.
-- **Retest:** Tested locally using both mouse and keyboard navigation. Validation displayed correctly after leaving invalid fields.
-- **Status:** Fixed locally - production retest pending.
+- **Retest:** Tested on the deployed Netlify site and working as expected.
+- **Status:** Fixed

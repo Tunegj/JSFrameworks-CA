@@ -6,6 +6,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
 import { CheckoutSuccessPage } from "./pages/CheckoutSuccessPage";
 import { Layout } from "./components/Layout";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 export function AppRoutes() {
   return (
@@ -17,6 +18,8 @@ export function AppRoutes() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
