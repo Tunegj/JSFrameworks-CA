@@ -109,6 +109,7 @@ export function ContactPage() {
               autoComplete="name"
               id="fullName"
               value={fullName}
+              onBlur={validateFullName}
               onChange={(e) => {
                 setFullName(e.target.value);
                 if (fullNameError) {
@@ -145,6 +146,7 @@ export function ContactPage() {
               name="email"
               autoComplete="email"
               value={email}
+              onBlur={validateEmail}
               onChange={(e) => {
                 setEmail(e.target.value);
                 if (emailError) {
@@ -180,6 +182,7 @@ export function ContactPage() {
               name="subject"
               id="subject"
               value={subject}
+              onBlur={validateSubject}
               onChange={(e) => {
                 setSubject(e.target.value);
                 if (subjectError) {
@@ -214,6 +217,7 @@ export function ContactPage() {
               name="message"
               rows={6}
               value={message}
+              onBlur={validateMessage}
               onChange={(e) => {
                 setMessage(e.target.value);
                 if (messageError) {

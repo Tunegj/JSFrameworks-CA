@@ -16,7 +16,15 @@ export function CartPage() {
       <h1 className="mb-8 text-3xl font-bold">Your Cart</h1>
 
       {cartItems.length === 0 && (
-        <p className="text-gray-600">Your cart is empty.</p>
+        <>
+          <p className="text-gray-600">Your cart is empty.</p>
+          <Link
+            to="/"
+            className="mt-6 inline-block rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus:outline-none focus:ring-offset-2"
+          >
+            Go Shopping
+          </Link>
+        </>
       )}
 
       {cartItems.length > 0 && (
@@ -89,12 +97,21 @@ export function CartPage() {
               <span>{formatPrice(cartTotal)}</span>
             </div>
 
-            <Link
-              to="/checkout"
-              className="mt-6 block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:w-fit"
-            >
-              Proceed to Checkout
-            </Link>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <Link
+                to="/"
+                className="font-medium text-green-700 underline-offset-4 hover:underline"
+              >
+                Continue Shopping
+              </Link>
+
+              <Link
+                to="/checkout"
+                className="mt-6 block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:w-fit"
+              >
+                Proceed to Checkout
+              </Link>
+            </div>
           </div>
         </>
       )}
