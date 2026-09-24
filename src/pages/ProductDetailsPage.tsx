@@ -87,7 +87,7 @@ export function ProductDetailsPage() {
               <button
                 type="button"
                 onClick={() => addToCart(product)}
-                className="mt-2 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 sm:w-auto"
+                className="mt-2 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 sm:w-auto focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
               >
                 Add to Cart
               </button>

@@ -115,14 +115,14 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                   <Link
                     to="/cart"
                     onClick={onClose}
-                    className="rounded-lg border border-green-700 px-4 py-2 text-center font-semibold text-green-700"
+                    className="rounded-lg border border-green-700 px-4 py-2 text-center font-semibold text-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
                   >
                     View Cart
                   </Link>
                   <Link
                     to="/checkout"
                     onClick={onClose}
-                    className="rounded-lg bg-green-700 px-4 py-2 text-center font-semibold text-white"
+                    className="rounded-lg bg-green-700 px-4 py-2 text-center font-semibold text-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
                   >
                     Checkout
                   </Link>

@@ -44,8 +44,19 @@ Testing performed on the deployed Netlify application
 
 ## Responsive Testing
 
-| Viewport | Pages Tested | Issues / Fixes | Status |
-| -------- | ------------ | -------------- | ------ |
+| Page / Component                                        | Viewport          | Test                                                                                                           | Result                                                                                             | Status |
+| ------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------ |
+| Homepage                                                | Mobile (~375px)   | Check header, search, product grid and product cards for overflow, wrapping and usability                      | Layout displayed correctly with no overlap or horizontal scrolling                                 | Pass   |
+| Product Details                                         | Mobile (~375px)   | Check image, product information, tags, cart button and reviews                                                | Content displayed correctly with no overflow or layout issues                                      | Pass   |
+| Cart dialog                                             | Mobile (~375px)   | Check cart items, quantity controls, actions and scrolling for overflow and usability                          | Dialog fit the viewport correctly and remained scrollable with multiple products                   | Pass   |
+| Cart page                                               | Mobile (~375px)   | Check cart items, quantity controls, subtotals, totals and navigation for wrapping, overflow and usability     | Layout displayed correctly with no overflow; Continue Shopping alignment was adjusted for mobile   | Pass   |
+| Checkout                                                | Mobile (~375px)   | Check order summary, product information, line totals, overall total, checkout button and empty state          | Layout displayed correctly with no overflow or usability issues                                    | Pass   |
+| Checkout success                                        | Mobile (~375px)   | Check confirmation content and Continue Shopping action for wrapping, overflow and usability                   | Content displayed correctly with no responsive issues                                              | Pass   |
+| Contact form                                            | Mobile (~375px)   | Check form fields, validation messages, success message and submit button for wrapping, overflow and usability | Form and all validation states displayed correctly with no responsive issues                       | Pass   |
+| 404 page                                                | Mobile (~375px)   | Check error message and Continue Shopping action for wrapping, overflow and usability                          | Content displayed correctly with no responsive issues                                              | Pass   |
+| Homepage                                                | Tablet (~768px)   | Check header, search, search results and product grid across the tablet layout                                 | Two-column product grid and navigation displayed correctly with no overflow or layout issues       | Pass   |
+| Product Details, Cart, Checkout, Contact form, 404 page | Tablet (~768px)   | Check layout and responsiveness across the tablet layout for all major pages                                   | Layout displayed correctly with no overflow or layout issues                                       | Pass   |
+| All pages and components                                | Desktop (~1440px) | Check overall layout, spacing, content-width, product grid, dialogs and controls                               | Layout displayed correctly, homepage used four-column grid and no responsiveness issues were found | Pass   |
 
 ## Accessibility Testing
 
@@ -57,8 +68,15 @@ Testing performed on the deployed Netlify application
 
 - **Found:** Navigating to an invalid route displayed a blank page because no React Router route matched the URL
 - **Fix:** Added a catch-all `*` route with a Not Found page and a link back to the shop
-- **Retest:** Pending
-- **Status:** In progress
+- **Retest:** Tested on deployed Netlify site and working as expected
+- **Status:** Fixed
+
+### Issue: Inconsistent keyboard focus indicators
+
+- **Found:** Several interactive elements used the browser's default black focus outline, while the Product Card focus state was not sufficiently clear.
+- **Fix:** Standardized keyboard focus indicators using a green focus ring and offset. Product Cards use `focus-within` so the entire clickable card receives a visible focus state.
+- **Retest:** Keyboard navigation tested across interactive elements and focus indicators displayed clearly and consistently.
+- **Status:** Fixed.
 
 ### Improvement: Cart item subtotal
 
@@ -80,3 +98,10 @@ Testing performed on the deployed Netlify application
 - **Improvement:** Added `onBlur` validation so individual fields are validated when the user leaves them, while retaining full validation on submit.
 - **Retest:** Tested on the deployed Netlify site and working as expected.
 - **Status:** Fixed
+
+### Improvement: Cart Navigation alignment on mobile
+
+- **Found:** On mobile viewports, the "Continue Shopping" link and "Proceed to Checkout" button on the Cart page were not properly aligned, causing layout issues.
+- **Improvement:** Centered the Continue Shopping link on the mobile cart layout.
+- **Retest:** Displayed correctly at approximately 375px.
+- **Status:** Fixed locally - production retest pending.

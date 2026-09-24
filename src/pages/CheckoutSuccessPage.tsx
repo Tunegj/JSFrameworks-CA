@@ -19,7 +19,7 @@ export function CheckoutSuccessPage() {
 
         <Link
           to="/"
-          className="mt-8 inline-block rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800"
+          className="mt-8 inline-block rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
         >
           Continue Shopping
         </Link>

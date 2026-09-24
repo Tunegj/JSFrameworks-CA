@@ -13,8 +13,11 @@ export function ProductCard({ product }: ProductCardProps) {
   );
 
   return (
-    <article className="relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-      <Link to={`/product/${product.id}`}>
+    <article className="relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm focus-within:ring-2 focus-within:ring-green-600 focus-within:ring-offset-2">
+      <Link
+        to={`/product/${product.id}`}
+        className="block focus-visible:outline-none"
+      >
         <img
           src={product.image.url}
           alt={product.image.alt}

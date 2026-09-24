@@ -20,7 +20,7 @@ export function CartPage() {
           <p className="text-gray-600">Your cart is empty.</p>
           <Link
             to="/"
-            className="mt-6 inline-block rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus:outline-none focus:ring-offset-2"
+            className="mt-6 inline-block rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
           >
             Go Shopping
           </Link>
@@ -58,7 +58,7 @@ export function CartPage() {
                     <button
                       type="button"
                       onClick={() => decreaseQuantity(item.product.id)}
-                      className="rounded border border-gray-300 px-3 py-1"
+                      className="rounded border border-gray-300 px-3 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
                       aria-label={`Decrease quantity of ${item.product.title}`}
                     >
                       -
@@ -68,7 +68,7 @@ export function CartPage() {
                     <button
                       type="button"
                       onClick={() => increaseQuantity(item.product.id)}
-                      className="rounded border border-gray-300 px-3 py-1"
+                      className="rounded border border-gray-300 px-3 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
                       aria-label={`Increase quantity of ${item.product.title}`}
                     >
                       +
@@ -77,7 +77,7 @@ export function CartPage() {
                     <button
                       type="button"
                       onClick={() => removeFromCart(item.product.id)}
-                      className="ml-auto font-medium text-red-700"
+                      className="ml-auto font-medium text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
                     >
                       Remove
                     </button>
@@ -100,14 +100,14 @@ export function CartPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <Link
                 to="/"
-                className="font-medium text-green-700 underline-offset-4 hover:underline"
+                className="text-center font-medium text-green-700 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:rounded-sm"
               >
                 Continue Shopping
               </Link>
 
               <Link
                 to="/checkout"
-                className="mt-6 block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:w-fit"
+                className="mt-6 block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 "
               >
                 Proceed to Checkout
               </Link>
