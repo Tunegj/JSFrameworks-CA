@@ -11,14 +11,30 @@ export function HomePage() {
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [selectedTag, setSelectedTag] = useState("all");
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase();
 
   const matchingProducts = products.filter((product) => {
-    return product.title.toLowerCase().includes(normalizedSearchQuery);
+    const titleMatches = product.title
+      .toLowerCase()
+      .includes(normalizedSearchQuery);
+
+    const tagMatches = product.tags.some((tag) =>
+      tag.toLowerCase().includes(normalizedSearchQuery),
+    );
+
+    return titleMatches || tagMatches;
   });
 
   const searchRef = useRef<HTMLDivElement>(null);
+
+  const tags = products.flatMap((product) => product.tags);
+  const uniqueTags = [...new Set(tags)];
+
+  const filteredProducts = products.filter((product) => {
+    return selectedTag === "all" || product.tags.includes(selectedTag);
+  });
 
   useEffect(() => {
     function handlePointerDown(event: PointerEvent) {
@@ -55,7 +71,14 @@ export function HomePage() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
-      <h1 className="mb-8 text-3xl font-bold text-center">Online Shop</h1>
+      <div className="mb-8 text-center">
+        <h1 className="text-3xl font-bold tex-gray-900">
+          Find something you'll love
+        </h1>
+        <p className="mt-2 text-gray-600">
+          Browse our collection or search for something specific
+        </p>
+      </div>
       <div className="relative mx-auto mb-8 max-w-xl" ref={searchRef}>
         <label htmlFor="product-search" className="sr-only">
           Search Products
@@ -99,6 +122,32 @@ export function HomePage() {
           </div>
         )}
       </div>
+      {!isLoading && !error && products.length > 0 && (
+        <div className="mb-8">
+          <label
+            htmlFor="tag-filter"
+            className="mb-2 block font-medium text-gray-900"
+          >
+            Filter by category
+          </label>
+
+          <select
+            name="filter"
+            id="tag-filter"
+            value={selectedTag}
+            onChange={(event) => setSelectedTag(event.target.value)}
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 capitalize text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 sm:w-auto"
+          >
+            <option value="all">All Products</option>
+
+            {uniqueTags.map((tag) => (
+              <option key={tag} value={tag}>
+                {tag}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       {isLoading && <LoadingSpinner text="Loading products..." />}
       {error && <p>{error}</p>}
       {products.length === 0 && !isLoading && !error && (
@@ -106,7 +155,7 @@ export function HomePage() {
       )}
       {!isLoading && !error && products.length !== 0 && (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product) => {
+          {filteredProducts.map((product) => {
             return <ProductCard key={product.id} product={product} />;
           })}
         </div>

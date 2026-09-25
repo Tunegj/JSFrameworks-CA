@@ -20,8 +20,21 @@ export function Header() {
         aria-label="Main navigation"
       >
         <div className="flex items-center gap-8">
-          <Link to="/" className="text-xl font-bold text-green-700">
-            Logo
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+            aria-label="Nook home"
+          >
+            <span
+              aria-hidden="true"
+              className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-700 text-lg font-bold text-white"
+            >
+              N
+            </span>
+
+            <span className="text-2xl font-bold tracking-tight text-gray-900">
+              Nook<span className="text-green-700"></span>
+            </span>
           </Link>
 
           <ul className="flex items-center gap-6">
