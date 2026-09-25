@@ -1,75 +1,120 @@
-# React + TypeScript + Vite
+# Nook | Online Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nook is a responsive online shop built with React and TypeScript as part of the JavaScript Frameworks Course Assignment.
 
-Currently, two official plugins are available:
+The application uses the Noroff Online Shop API to display products and allows users to search and filter products, view individual product details, manage a persistent shopping cart, complete a checkout flow, and submit a validated contact form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Responsive product listing
+- Product details with reviews and tags
+- Dynamic product search by title and tags
+- Product filtering by category/tag
+- Discount prices and percentage discounts
+- Persistent shopping cart using localStorage
+- Cart quantity controls and item removal
+- Cart feedback notifications
+- Checkout flow and success page
+- Contact form with validation
+- Custom 404 page
+- Responsive design for mobile, tablet, and desktop
+- Keyboard accessible navigation and controls
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- React Router
+- Vite
+- Tailwind CSS
+- Noroff Online Shop API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Clone the repository and install the dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/Tunegj/JSFrameworks-CA.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd JSFrameworks-CA
 ```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Available Scripts
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Testing
+
+The application was manually tested for:
+
+- Product listing and product details
+- Search and tag filtering
+- Cart functionality and persistence
+- Checkout flow
+- Contact form validation
+- Invalid routes
+- Keyboard navigation and focus state
+- Responsive layouts across mobile, tablet, and desktop
+- Color contrast and accessibility
+
+Automated accessibility testing was also performed using Lighthouse.
+
+See [TESTING.md](TESTING.md) for the full testing log.
+
+## Deployment
+
+The application is deployed on Netlify.
+
+**Live site** [Nook](https://tone-online-shop.netlify.app/)
+
+## Repository
+
+**GitHub** [JSFrameworks-CA](https://github.com/Tunegj/JSFrameworks-CA)
+
+## API
+
+Product data is provided by the Noroff Online Shop API.
+
+## Author
+
+**Tone Gjerde**

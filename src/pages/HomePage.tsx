@@ -72,7 +72,7 @@ export function HomePage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold tex-gray-900">
+        <h1 className="text-3xl font-bold text-gray-900">
           Find something you'll love
         </h1>
         <p className="mt-2 text-gray-600">
@@ -94,7 +94,7 @@ export function HomePage() {
           }}
           onFocus={() => setIsSearchOpen(true)}
           placeholder="Search products..."
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-green-700 focus:ring-2 focus:ring-green-700 focus:outline-none"
         />
         {searchQuery.trim() !== "" && isSearchOpen && (
           <div className="absolute z-20 mt-2 w-full rounded-lg border border-gray-200 bg-white shadow-lg">
@@ -104,7 +104,7 @@ export function HomePage() {
                   key={product.id}
                   to={`/product/${product.id}`}
                   onClick={() => setIsSearchOpen(false)}
-                  className="flex items-center gap-3 border-b border-gray-100 p-3 last:border-b-0 hover:bg-gray-100"
+                  className="flex items-center gap-3 border-b border-gray-100 p-3 last:border-b-0 hover:bg-gray-100 focus-visible:bg-gray-100 focus-visible:outline-none"
                 >
                   <img
                     src={product.image.url}
@@ -136,7 +136,7 @@ export function HomePage() {
             id="tag-filter"
             value={selectedTag}
             onChange={(event) => setSelectedTag(event.target.value)}
-            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 capitalize text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 sm:w-auto"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 capitalize focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none sm:w-auto"
           >
             <option value="all">All Products</option>
 

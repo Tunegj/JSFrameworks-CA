@@ -42,11 +42,11 @@ export function ProductDetailsPage() {
       {error && <p>{error}</p>}
       {!isLoading && !error && product && (
         <>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 ">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <img
               src={product.image.url}
               alt={product.image.alt}
-              className="aspect-square w-full object-cover rounded-lg"
+              className="aspect-square w-full rounded-lg object-cover"
             />
             <div className="flex flex-col">
               <h1 className="my-4 text-4xl font-bold">{product.title}</h1>
@@ -65,7 +65,7 @@ export function ProductDetailsPage() {
                 </div>
               )}
 
-              <p className="my-4 text-gray-700 text-xl">
+              <p className="my-4 text-xl text-gray-700">
                 {product.description}
               </p>
 
@@ -87,7 +87,7 @@ export function ProductDetailsPage() {
               <button
                 type="button"
                 onClick={() => addToCart(product)}
-                className="mt-2 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 sm:w-auto focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+                className="mt-2 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none sm:w-auto"
               >
                 Add to Cart
               </button>

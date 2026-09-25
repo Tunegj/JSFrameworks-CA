@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
           className="aspect-square w-full object-cover"
         />
         {hasDiscount && (
-          <span className="absolute right-3 top-3 rounded-full bg-red-100 px-2 py-1 text-sm font-medium text-red-700">
+          <span className="absolute top-3 right-3 rounded-full bg-red-100 px-2 py-1 text-sm font-medium text-red-700">
             {discountPercentage}% off
           </span>
         )}

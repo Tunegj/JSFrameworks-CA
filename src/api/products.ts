@@ -6,6 +6,11 @@ import type {
 
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 
+/**
+ * Fetches all products from the online shop API.
+ * @returns a promise that resolves to an array of products.
+ * @throws An error if the request is unsuccessful.
+ */
 export async function fetchProducts(): Promise<Product[]> {
   const response = await fetch(API_URL);
   if (!response.ok) {
@@ -15,6 +20,12 @@ export async function fetchProducts(): Promise<Product[]> {
   return result.data;
 }
 
+/**
+ * Fetches a single product by its ID
+ * @param id - The ID of the product to fetch
+ * @returns A promise that resolves to the requested product.
+ * @throws An error if the request is unsuccessful
+ */
 export async function fetchProductById(id: string): Promise<Product> {
   const response = await fetch(`${API_URL}/${id}`);
   if (!response.ok) {

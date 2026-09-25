@@ -22,7 +22,7 @@ export function Header() {
         <div className="flex items-center gap-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-2 rounded-sm focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             aria-label="Nook home"
           >
             <span
@@ -33,7 +33,7 @@ export function Header() {
             </span>
 
             <span className="text-2xl font-bold tracking-tight text-gray-900">
-              Nook<span className="text-green-700"></span>
+              Nook<span className="text-green-700">.</span>
             </span>
           </Link>
 
@@ -41,7 +41,7 @@ export function Header() {
             <li>
               <Link
                 to="/"
-                className="font-medium text-gray-700 transition hover:text-green-700"
+                className="rounded-sm font-medium text-gray-700 transition hover:text-green-700 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 Home
               </Link>
@@ -49,7 +49,7 @@ export function Header() {
             <li>
               <Link
                 to="/contact"
-                className="font-medium text-gray-700 transition hover:text-green-700"
+                className="rounded-sm font-medium text-gray-700 transition hover:text-green-700 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 Contact
               </Link>
@@ -60,10 +60,14 @@ export function Header() {
         <button
           type="button"
           onClick={() => dialogRef.current?.showModal()}
-          className="flex items-center gap-2 rounded-lg px-3 py-2 font-medium text-gray-700 transition hover:bg-gray-100"
+          aria-label={`Open cart, ${cartCount} ${cartCount === 1 ? "item" : "items"}`}
+          className="flex items-center gap-2 rounded-lg px-3 py-2 font-medium text-gray-700 transition hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
         >
           Cart
-          <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-green-700 px-1.5 text-xs font-semibold text-white">
+          <span
+            aria-hidden="true"
+            className="flex h-6 min-w-6 items-center justify-center rounded-full bg-green-700 px-1.5 text-xs font-semibold text-white"
+          >
             {cartCount}
           </span>
         </button>

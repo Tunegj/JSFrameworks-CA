@@ -21,7 +21,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
           {initials}
         </div>
         <div>
-          <h3 className="font-semibold text-lg">{review.username}</h3>
+          <h3 className="text-lg font-semibold">{review.username}</h3>
           <div className="mt-1 flex items-center gap-2">
             <span className="text-green-700" aria-hidden="true">
               {"★".repeat(review.rating)}

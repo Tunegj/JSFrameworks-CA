@@ -9,7 +9,10 @@ export function LoadingSpinner({ text }: LoadingSpinnerProps) {
       role="status"
       aria-live="polite"
     >
-      <div className="h-10 w-10 rounded-full border-4 border-gray-200 border-t-gray-700 animate-spin"></div>
+      <div
+        aria-hidden="true"
+        className="h-10 w-10 animate-spin rounded-full border-4 border-gray-200 border-t-gray-700"
+      ></div>
       <p>{text}</p>
     </div>
   );

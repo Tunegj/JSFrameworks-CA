@@ -120,7 +120,7 @@ export function ContactPage() {
               }}
               aria-invalid={fullNameError ? "true" : "false"}
               aria-describedby={fullNameError ? "fullName-error" : undefined}
-              className={`w-full rounded-md border px-4 py-3 text-gray-900 outline-none transition focus:ring-2  ${
+              className={`w-full rounded-md border px-4 py-3 text-gray-900 transition outline-none focus:ring-2 ${
                 fullNameError
                   ? "border-red-600 focus:border-red-600 focus:ring-red-600"
                   : "border-gray-300 focus:border-green-600 focus:ring-green-600"
@@ -157,7 +157,7 @@ export function ContactPage() {
               }}
               aria-invalid={emailError ? "true" : "false"}
               aria-describedby={emailError ? "email-error" : undefined}
-              className={`w-full rounded-md border px-4 py-3 text-gray-900 outline-none transition focus:ring-2 ${
+              className={`w-full rounded-md border px-4 py-3 text-gray-900 transition outline-none focus:ring-2 ${
                 emailError
                   ? "border-red-600 focus:border-red-600 focus:ring-red-600"
                   : "border-gray-300 focus:border-green-600 focus:ring-green-600"
@@ -192,7 +192,7 @@ export function ContactPage() {
               }}
               aria-invalid={subjectError ? "true" : "false"}
               aria-describedby={subjectError ? "subject-error" : undefined}
-              className={`w-full rounded-md border px-4 py-3 text-gray-900 outline-none transition focus:ring-2  ${
+              className={`w-full rounded-md border px-4 py-3 text-gray-900 transition outline-none focus:ring-2 ${
                 subjectError
                   ? "border-red-600 focus:border-red-600 focus:ring-red-600"
                   : "border-gray-300 focus:border-green-600 focus:ring-green-600"
@@ -227,7 +227,7 @@ export function ContactPage() {
               }}
               aria-invalid={messageError ? "true" : "false"}
               aria-describedby={messageError ? "message-error" : undefined}
-              className={`w-full rounded-md border px-4 py-3 text-gray-900 outline-none transition focus:ring-2 ${
+              className={`w-full rounded-md border px-4 py-3 text-gray-900 transition outline-none focus:ring-2 ${
                 messageError
                   ? "border-red-600 focus:border-red-600 focus:ring-red-600"
                   : "border-gray-300 focus:border-green-600 focus:ring-green-600"
@@ -242,7 +242,7 @@ export function ContactPage() {
 
           <button
             type="submit"
-            className="w-full rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 sm:w-auto"
+            className="w-full rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none sm:w-auto"
           >
             Send
           </button>

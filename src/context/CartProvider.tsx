@@ -31,13 +31,13 @@ export function CartProvider({ children }: CartProviderProps) {
   }, [cartItems]);
 
   function addToCart(product: Product) {
-    const existingItem = cartItems.find(
-      (item) => item.product.id === product.id,
-    );
+    setCartItems((currentItems) => {
+      const existingItem = currentItems.find(
+        (item) => item.product.id === product.id,
+      );
 
-    if (existingItem) {
-      setCartItems(
-        cartItems.map((item) => {
+      if (existingItem) {
+        return currentItems.map((item) => {
           if (item.product.id === product.id) {
             return {
               ...item,
@@ -45,11 +45,10 @@ export function CartProvider({ children }: CartProviderProps) {
             };
           }
           return item;
-        }),
-      );
-    } else {
-      setCartItems([...cartItems, { product, quantity: 1 }]);
-    }
+        });
+      }
+      return [...currentItems, { product, quantity: 1 }];
+    });
     setToastMessage(`${product.title} added to cart`);
   }
 
@@ -57,7 +56,9 @@ export function CartProvider({ children }: CartProviderProps) {
     const itemToRemove = cartItems.find(
       (item) => item.product.id === productId,
     );
-    setCartItems(cartItems.filter((item) => item.product.id !== productId));
+    setCartItems((currentItems) =>
+      currentItems.filter((item) => item.product.id !== productId),
+    );
 
     if (itemToRemove) {
       setToastMessage(`${itemToRemove.product.title} removed from the cart`);
@@ -65,8 +66,8 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function increaseQuantity(productId: string) {
-    setCartItems(
-      cartItems.map((item) => {
+    setCartItems((currentItems) =>
+      currentItems.map((item) => {
         if (item.product.id === productId) {
           return {
             ...item,
@@ -79,8 +80,8 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function decreaseQuantity(productId: string) {
-    setCartItems(
-      cartItems
+    setCartItems((currentItems) =>
+      currentItems
         .map((item) => {
           if (item.product.id === productId) {
             return {

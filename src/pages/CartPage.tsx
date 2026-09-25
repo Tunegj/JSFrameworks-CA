@@ -20,7 +20,7 @@ export function CartPage() {
           <p className="text-gray-600">Your cart is empty.</p>
           <Link
             to="/"
-            className="mt-6 inline-block rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+            className="mt-6 inline-block rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             Go Shopping
           </Link>
@@ -45,7 +45,7 @@ export function CartPage() {
                   <h2 className="text-lg font-semibold">
                     <Link
                       to={`/product/${item.product.id}`}
-                      className="rounded hover:underline focus-visible:outline-2 focus-visible:outline-offset-2"
+                      className="rounded-sm hover:underline focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                     >
                       {item.product.title}
                     </Link>
@@ -58,17 +58,21 @@ export function CartPage() {
                     <button
                       type="button"
                       onClick={() => decreaseQuantity(item.product.id)}
-                      className="rounded border border-gray-300 px-3 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                      className="rounded border border-gray-300 px-3 py-1 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                       aria-label={`Decrease quantity of ${item.product.title}`}
                     >
                       -
                     </button>
-                    <span aria-label="Quantity">{item.quantity}</span>
+                    <span
+                      aria-label={`Quantity of ${item.product.title}: ${item.quantity}`}
+                    >
+                      {item.quantity}
+                    </span>
 
                     <button
                       type="button"
                       onClick={() => increaseQuantity(item.product.id)}
-                      className="rounded border border-gray-300 px-3 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                      className="rounded border border-gray-300 px-3 py-1 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                       aria-label={`Increase quantity of ${item.product.title}`}
                     >
                       +
@@ -77,12 +81,12 @@ export function CartPage() {
                     <button
                       type="button"
                       onClick={() => removeFromCart(item.product.id)}
-                      className="ml-auto font-medium text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
+                      className="ml-auto font-medium text-red-700 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                     >
                       Remove
                     </button>
                   </div>
-                  <p className="font-semibold text-gray-900 mt-4">
+                  <p className="mt-4 font-semibold text-gray-900">
                     Subtotal:{" "}
                     {formatPrice(item.product.discountedPrice * item.quantity)}
                   </p>
@@ -100,14 +104,14 @@ export function CartPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <Link
                 to="/"
-                className="text-center font-medium text-green-700 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:rounded-sm"
+                className="text-center font-medium text-green-700 underline-offset-4 hover:underline focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 Continue Shopping
               </Link>
 
               <Link
                 to="/checkout"
-                className="mt-6 block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 "
+                className="block w-full rounded-lg bg-green-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-green-800 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none sm:ml-auto sm:w-fit"
               >
                 Proceed to Checkout
               </Link>

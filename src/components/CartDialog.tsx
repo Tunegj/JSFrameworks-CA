@@ -29,11 +29,11 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
         className="m-auto w-full max-w-md rounded-xl p-0 backdrop:bg-black/40"
       >
         <div className="relative p-6">
-          <form method="dialog" className="absolute right-4 top-4">
+          <form method="dialog" className="absolute top-4 right-4">
             <button
               type="submit"
               aria-label="Close cart"
-              className="rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 cursor-pointer"
+              className="cursor-pointer rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               X
             </button>
@@ -50,7 +50,7 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                 {cartItems.map((item) => (
                   <article
                     key={item.product.id}
-                    className="border-b border-gray-200 pb-4 mt-6"
+                    className="mt-6 border-b border-gray-200 pb-4"
                   >
                     <div className="flex gap-4">
                       <img
@@ -64,7 +64,7 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                           <Link
                             to={`/product/${item.product.id}`}
                             onClick={onClose}
-                            className="rounded hover:underline focus-visible:outline-2 focus-visible:outline-offset-2"
+                            className="rounded hover:underline focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                           >
                             {item.product.title}
                           </Link>
@@ -77,17 +77,21 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                           <button
                             type="button"
                             onClick={() => decreaseQuantity(item.product.id)}
-                            className="rounded border border-gray-300 px-2 py-1 cursor-pointer"
+                            className="cursor-pointer rounded border border-gray-300 px-2 py-1 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                             aria-label={`Decrease quantity of ${item.product.title}`}
                           >
                             -
                           </button>
 
-                          <span aria-label="Quantity">{item.quantity}</span>
+                          <span
+                            aria-label={`Quantity of ${item.product.title}: ${item.quantity}`}
+                          >
+                            {item.quantity}
+                          </span>
                           <button
                             type="button"
                             onClick={() => increaseQuantity(item.product.id)}
-                            className="rounded border border-gray-300 px-2 py-1 cursor-pointer"
+                            className="cursor-pointer rounded border border-gray-300 px-2 py-1 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                             aria-label={`Increase quantity of ${item.product.title}`}
                           >
                             +
@@ -95,7 +99,7 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                           <button
                             type="button"
                             onClick={() => removeFromCart(item.product.id)}
-                            className="ml-auto text-sm font-medium text-red-700 cursor-pointer"
+                            className="ml-auto cursor-pointer text-sm font-medium text-red-700 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                           >
                             Remove
                           </button>
@@ -115,14 +119,14 @@ export const CartDialog = forwardRef<HTMLDialogElement, CartDialogProps>(
                   <Link
                     to="/cart"
                     onClick={onClose}
-                    className="rounded-lg border border-green-700 px-4 py-2 text-center font-semibold text-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+                    className="rounded-lg border border-green-700 px-4 py-2 text-center font-semibold text-green-700 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     View Cart
                   </Link>
                   <Link
                     to="/checkout"
                     onClick={onClose}
-                    className="rounded-lg bg-green-700 px-4 py-2 text-center font-semibold text-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+                    className="rounded-lg bg-green-700 px-4 py-2 text-center font-semibold text-white focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     Checkout
                   </Link>

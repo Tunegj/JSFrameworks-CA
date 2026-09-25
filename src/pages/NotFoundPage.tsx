@@ -12,7 +12,7 @@ export function NotFoundPage() {
 
       <Link
         to="/"
-        className="mt-8 inline-flex items-center justify-center rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+        className="mt-8 inline-flex items-center justify-center rounded-md bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
       >
         Continue Shopping
       </Link>

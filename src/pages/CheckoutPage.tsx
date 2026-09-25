@@ -20,7 +20,7 @@ export function CheckoutPage() {
           <p className="text-gray-600">Your cart is empty.</p>
           <Link
             to="/"
-            className="mt-4 inline-block font-medium text-green-700 hover:underline focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+            className="mt-4 inline-block font-medium text-green-700 hover:underline focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             Continue shopping
           </Link>
@@ -60,7 +60,7 @@ export function CheckoutPage() {
           <button
             type="button"
             onClick={handleCheckout}
-            className="mt-6 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 sm:ml-auto sm:block sm:w-fit focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+            className="mt-6 w-full rounded-lg bg-green-700 px-6 py-3 font-semibold text-white transition hover:bg-green-800 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 focus-visible:outline-none sm:ml-auto sm:block sm:w-fit"
           >
             Complete Checkout
           </button>
