@@ -56,7 +56,7 @@ export function ProductDetailsPage() {
                     return (
                       <span
                         key={tag}
-                        className="rounded-full bg-green-200 px-2 py-1 text-sm font-medium text-green-700"
+                        className="rounded-full bg-green-200 px-2 py-1 text-sm font-medium text-green-900"
                       >
                         {tag}
                       </span>

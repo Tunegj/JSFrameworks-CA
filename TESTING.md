@@ -4,7 +4,7 @@ Testing performed on the deployed Netlify application
 
 ## Functional Testing
 
-| Area                 | Test                                                             | Expected Result                                                                             | Status                                                                                             |
+| Area                 | Test                                                             | Expected Result Status                                                                      |
 | -------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ---- |
 | Product listing      | Load homepage                                                    | Products load and display in grid                                                           | Loading spinner displayed, then products loaded correctly in the grid                              | Pass |
 | Product cards        | Check product information                                        | Cards display image, title, price, discount information and rating where applicable         | All required product information displayed correctly                                               | Pass |
@@ -60,7 +60,15 @@ Testing performed on the deployed Netlify application
 
 ## Accessibility Testing
 
-| Test | Result | Fixes |
+| Area             | Test                                 | Expected Result                                                           | Status                                                                                            |
+| ---------------- | ------------------------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ---- |
+| Full application | Keyboard navigation                  | Navigate using Tab, Shift+Tab, Enter and Escape                           | All interactive elements were reachable and operable in a logical order with visible focus states | Pass |
+| Colour scheme    | Emulate `prefers-color-scheme: dark` | Application remains readable and usable when the system prefers dark mode | Application retained its light theme and all text and controls remained visible and usable        | Pass |
+| Lighthouse audit | Homepage                             | Run automated Lighthouse accessibility audit on deployed application      | Lighthouse returned an Accessibility score of 100                                                 | Pass |
+| Lighthouse audit | Cart page                            | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass |
+| Lighthouse audit | Checkout page                        | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass |
+| Lighthouse audit | Checkout success page                | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass |
+| Lighthouse audit | Contact form                         | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass |
 
 ## Issues/improvements Found and Fixed
 
@@ -77,6 +85,13 @@ Testing performed on the deployed Netlify application
 - **Fix:** Standardized keyboard focus indicators using a green focus ring and offset. Product Cards use `focus-within` so the entire clickable card receives a visible focus state.
 - **Retest:** Keyboard navigation tested across interactive elements and focus indicators displayed clearly and consistently.
 - **Status:** Fixed.
+
+### Issue: Insufficient colour contrast on product tags
+
+- **Found:** Lighthouse reported insufficient contrast between the tag text and background on the Product Details page.
+- **Fix:** Pending.
+- **Retest:** Pending.
+- **Status:** In progress.
 
 ### Improvement: Cart item subtotal
 
