@@ -60,17 +60,17 @@ Testing performed on the deployed Netlify application
 
 ## Accessibility Testing
 
-| Area | Test | Expected Result | Status |
-| ---------------- | ------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ---- |
-| Full application | Keyboard navigation | Navigate using Tab, Shift+Tab, Enter and Escape | All interactive elements were reachable and operable in a logical order with visible focus states | Pass |
-| Colour scheme | Emulate `prefers-color-scheme: dark` | Application remains readable and usable when the system prefers dark mode | Application retained its light theme and all text and controls remained visible and usable | Pass |
-| Lighthouse audit | Homepage | Run automated Lighthouse accessibility audit on deployed application | Lighthouse returned an Accessibility score of 100 | Pass |
-| Lighthouse audit | Cart page | Run automated Lighthouse accessibility audit on the deployed application | Lighthouse returned an Accessibility score of 100 | Pass |
-| Lighthouse audit | Checkout page | Run automated Lighthouse accessibility audit on the deployed application | Lighthouse returned an Accessibility score of 100 | Pass |
-| Lighthouse audit | Checkout success page | Run automated Lighthouse accessibility audit on the deployed application | Lighthouse returned an Accessibility score of 100 | Pass |
-| Lighthouse audit | Contact form | Run automated Lighthouse accessibility audit on the deployed application | Lighthouse returned an Accessibility score of 100 | Pass |
-| Lighthouse audit | Contact form with validation messages | Run automated Lighthouse accessibility audit on the deployed application | Lighthouse returned an Accessibility score of 100 | Pass |
-| Lighthouse audit | Product Details page | Run automated Lighthouse accessibility audit on the deployed application | Lighthouse returned an Accessibility score of 100 after fixing tag contrast issues | Pass |
+| Area             | Test                                  | Expected Result                                                           | Actual Result                                                                                     | Status |
+| ---------------- | ------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------ |
+| Full application | Keyboard navigation                   | Navigate using Tab, Shift+Tab, Enter and Escape                           | All interactive elements were reachable and operable in a logical order with visible focus states | Pass   |
+| Colour scheme    | Emulate `prefers-color-scheme: dark`  | Application remains readable and usable when the system prefers dark mode | Application retained its light theme and all text and controls remained visible and usable        | Pass   |
+| Lighthouse audit | Homepage                              | Run automated Lighthouse accessibility audit on deployed application      | Lighthouse returned an Accessibility score of 100                                                 | Pass   |
+| Lighthouse audit | Cart page                             | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass   |
+| Lighthouse audit | Checkout page                         | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass   |
+| Lighthouse audit | Checkout success page                 | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass   |
+| Lighthouse audit | Contact form                          | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass   |
+| Lighthouse audit | Contact form with validation messages | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100                                                 | Pass   |
+| Lighthouse audit | Product Details page                  | Run automated Lighthouse accessibility audit on the deployed application  | Lighthouse returned an Accessibility score of 100 after fixing tag contrast issues                | Pass   |
 
 ## Issues/improvements Found and Fixed
 
